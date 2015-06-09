@@ -1,0 +1,4 @@
+*.sql
+*.DS_Store
+craft/app/
+craft/config/license.key

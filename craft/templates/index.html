@@ -1,0 +1,82 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://buildwithcraft.com/docs/routing
+ #}
+{% extends "_layout" %}
+
+{% block content %}
+
+	<div id="feature">
+		<img class="featurefix" src="{{ entry.featureImage.first().url }}" alt="{{ siteName }}"/>
+	</div>
+
+	<div class="grid-100" id="intro">
+
+		{% for block in entry.pageBuilder %}
+		    
+			{% switch block.type %}
+
+				{% case 'headline' %}
+					<h2>{{ block.headline }}</h2>
+				
+				{% case 'text' %}
+					<div class="grid-60 prefix-20 suffix-20 mobile-grid-80 mobile-prefix-10 mobile-suffix-10">
+						{{ block.body }}
+					</div>
+
+				{% case 'button' %}
+
+					<div class="grid-60 prefix-20 suffix-20 mobile-grid-80 mobile-prefix-10 mobile-suffix-10">
+						<a href="{{ block.bDownload.first().url }}" target="_blank" class="btn">{{ block.bText }}</a>
+					</div>
+
+			{% endswitch %}
+		    
+		{% endfor %}
+
+	</div>
+
+	<div id="projects">
+
+		{% for project in entry.projects %}
+		 	
+		 	<section class="grid-100 mobile-grid-100 grid-parent project" style="background-image: url({{ project.projectBackgroundImage.first().url|default('') }});">
+
+				<div class="project-content">
+					<h5><a target="_blank" href="http://www.fullsail.edu" title="Visit {{ project.projectTitle }}">{{ project.projectTitle }}</a></h5>
+					<p>{{ project.projectDescription }}</p>
+					<a class="link-icon" target="_blank" href="{{ project.projectUrl }}" title="Visit {{ project.projectTitle }}">Full Sail</a>            
+					<h6>My Responsibilities</h6>
+					<p><em>
+						{{ project.projectResponsibilities | join(', ') }}
+					</em></p>
+				</div>
+				<div class="project-image">
+					<a target="_blank" href="{{ project.projectUrl }}" title="Visit {{ project.projectTitle }}">
+						<img src="{{ project.projectDisplayImage.first().url|default('') }}" alt=""/>
+					</a>
+				</div>						
+				<a target="_blank" href="http://www.fullsail.edu" title="Visit {{ project.projectTitle }}">
+					<img class="project-image-position-fix" src="{{ project.projectDisplayImage.first().url|default('') }}" alt=""/>
+				</a>
+			</section>
+
+		{% endfor %}
+
+	</div><!-- END #projects -->
+
+{% endblock %}
