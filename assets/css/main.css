@@ -225,6 +225,10 @@ footer p{
 	padding-top: 5px;
 }
 
+footer a{
+	color: #579cc3;
+}
+
 #social-links ul {
 	list-style: none;
 	float: right;
