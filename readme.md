@@ -30,7 +30,9 @@ If you want to install the site locally, follow these instructions:
 
 6. Fill in the proper MySQL credentials in `alex.craft.dev/craft/config/db.php`.
 
-7. Create a new virtual host with the hostname `alex.craft.dev` that points to the `alex.craft.dev/` folder. If using MAMP, add the following to the bottom of `/Applications/MAMP/conf/apache/httpd.conf` and restart apache.
+7. Download uploads from `http://alexvanholtz.com/uploads/downloads/AlexCraftUploads.zip` and place them in `alex.craft.dev/uploads/`.
+
+8. Create a new virtual host with the hostname `alex.craft.dev` that points to the `alex.craft.dev/` folder. If using MAMP, add the following to the bottom of `/Applications/MAMP/conf/apache/httpd.conf` and restart apache.
 
 		> NameVirtualHost *
 		> <VirtualHost *>
@@ -42,7 +44,7 @@ If you want to install the site locally, follow these instructions:
 		>     ServerName alex.craft.dev
 		> </VirtualHost>
 
-8. Edit your hosts file to resolve alex.craft.dev to `127.0.0.1`, if necessary.
+9. Edit your hosts file to resolve alex.craft.dev to `127.0.0.1`, if necessary.
 		
 		> 127.0.0.1  		alex.craft.dev
 
