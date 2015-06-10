@@ -26,18 +26,23 @@ If you want to install the site locally, follow these instructions:
 
 4. Download the latest version of Craft from [buildwithcraft.com](http://buildwithcraft.com), and copy its craft/app/ folder into alex.craft.dev/craft/.
 
-5. Create a new MySQL database called `alexcraft`, and import alex.craft.dev.sql into it.
+5. Download sql from [here](http://alexvanholtz.com/uploads/downloads/alex.craft.dev.sql). Create a new MySQL database called `alexcraft` and import alex.craft.dev.sql into it.
+
+		> mysql -uroot -proot;
+		> CREATE DATABASE alexcraft;
+		> use alexcraft;
+		> source alex.craft.dev.sql;
 
 6. Fill in the proper MySQL credentials in `alex.craft.dev/craft/config/db.php`.
 
-7. Download uploads from `http://alexvanholtz.com/uploads/downloads/AlexCraftUploads.zip` and place them in `alex.craft.dev/uploads/`.
+7. Download uploads from [here](httphttp://alexvanholtz.com/uploads/downloads/AlexCraftUploads.zip) and place them in `alex.craft.dev/uploads/`.
 
 8. Create a new virtual host with the hostname `alex.craft.dev` that points to the `alex.craft.dev/` folder. If using MAMP, add the following to the bottom of `/Applications/MAMP/conf/apache/httpd.conf` and restart apache.
 
 		> NameVirtualHost *
-		> <VirtualHost *>
- 		>    DocumentRoot "/Applications/MAMP/htdocs"
- 		>    ServerName localhost
+        > <VirtualHost *>
+        >    DocumentRoot "/Applications/MAMP/htdocs"
+        >    ServerName localhost
 		> </VirtualHost>
 		> <VirtualHost *>
 		>     DocumentRoot "/Applications/MAMP/htdocs/alex.craft.dev/"
