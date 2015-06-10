@@ -26,7 +26,7 @@ If you want to install the site locally, follow these instructions:
 
 4. Download the latest version of Craft from [buildwithcraft.com](http://buildwithcraft.com), and copy its craft/app/ folder into alex.craft.dev/craft/.
 
-5. Download sql from [here](http://alexvanholtz.com/uploads/downloads/alex.craft.dev.sql). Create a new MySQL database called `alexcraft` and import alex.craft.dev.sql into it.
+5. Download and unzip sql from [here](http://alexvanholtz.com/uploads/downloads/AlexCraftSQL.zip). Create a new MySQL database called `alexcraft` and import alex.craft.dev.sql into it.
 
 		> mysql -uroot -proot;
 		> CREATE DATABASE alexcraft;
