@@ -2,3 +2,4 @@
 *.DS_Store
 craft/app/
 craft/config/license.key
+sync_with_production.sh
