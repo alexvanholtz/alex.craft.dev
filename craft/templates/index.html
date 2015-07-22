@@ -57,7 +57,7 @@
 		 	<section class="grid-100 mobile-grid-100 grid-parent project" style="background-image: url({{ project.projectBackgroundImage.first().url|default('') }});">
 
 				<div class="project-content">
-					<h5><a target="_blank" href="http://www.fullsail.edu" title="Visit {{ project.projectTitle }}">{{ project.projectTitle }}</a></h5>
+					<h5><a target="_blank" href="{{ project.projectUrl }}" title="Visit {{ project.projectTitle }}">{{ project.projectTitle }}</a></h5>
 					<p>{{ project.projectDescription }}</p>
 					<a class="link-icon" target="_blank" href="{{ project.projectUrl }}" title="Visit {{ project.projectTitle }}">Full Sail</a>            
 					<h6>My Responsibilities</h6>
@@ -70,7 +70,7 @@
 						<img src="{{ project.projectDisplayImage.first().url|default('') }}" alt=""/>
 					</a>
 				</div>						
-				<a target="_blank" href="http://www.fullsail.edu" title="Visit {{ project.projectTitle }}">
+				<a target="_blank" href="{{ project.projectUrl }}" title="Visit {{ project.projectTitle }}">
 					<img class="project-image-position-fix" src="{{ project.projectDisplayImage.first().url|default('') }}" alt=""/>
 				</a>
 			</section>
